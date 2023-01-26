@@ -5,7 +5,7 @@ import "./App.css";
 function App() {
   const [count, setCount] = useState(0);
 
-  var ctx = document.getElementById("lineChart").getContext("2d");
+  var ctx = document.getElementById("lineChart");
   var chart = new Chart(ctx, {
     type: "line",
     data: {
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <canvas id="lineChart"></canvas>
+      <canvas id="lineChart">{chart}</canvas>
 
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
