@@ -1,12 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+
+  var ctx = document.getElementById("lineChart").getContext("2d");
+  var chart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      datasets: [
+        {
+          label: "My First dataset",
+          backgroundColor: "rgb(255, 99, 132)",
+          borderColor: "rgb(255, 99, 132)",
+          data: [0, 10, 5, 2, 20, 30, 45],
+        },
+      ],
+    },
+    options: {},
+  });
 
   return (
     <div className="App">
+      <canvas id="lineChart"></canvas>
+
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
@@ -28,7 +47,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
