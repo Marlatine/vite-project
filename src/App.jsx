@@ -5,28 +5,9 @@ import "./App.css";
 function App() {
   const [count, setCount] = useState(0);
 
-  var ctx = document.getElementById("lineChart");
-  var chart = new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: ["January", "February", "March", "April", "May", "June", "July"],
-      datasets: [
-        {
-          label: "My First dataset",
-          backgroundColor: "rgb(255, 99, 132)",
-          borderColor: "rgb(255, 99, 132)",
-          data: [0, 10, 5, 2, 20, 30, 45],
-        },
-      ],
-    },
-    options: {},
-  });
-
   return (
     <div className="App">
-      <canvas id="lineChart">{chart}</canvas>
-
-      {/* <div>
+      <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
         </a>
@@ -45,7 +26,7 @@ function App() {
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p> */}
+      </p>
     </div>
   );
 }
